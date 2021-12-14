@@ -4,9 +4,20 @@ La funzione ritornerà un nuovo array con i valori che hanno la posizione compre
 Usiamo i nuovi metodi degli array foreach o filter.
  */
 
-const names = ['Paolo', 'Maria', 'Chiara', 'Federico', 'Mattia', 'Stefano', 'Martina'];
-const numA = 1;
-const numB = 4;
-const array2 = myFunction(names, numA, numB);
+const numA = 2;
+const numB = 5;
+const array2 = myFunction(numA, numB);
 
 
+function myFunction(numA, numB) {
+  const names = ['Paolo', 'Maria', 'Chiara', 'Federico', 'Mattia', 'Stefano', 'Martina'];
+  const array2 = [];
+  names.forEach((name, index) => {
+    if (index >= numA && index <= numB) {
+      array2.push(name);
+    }
+  });
+
+  console.log(names, array2);
+  return array2;
+}
